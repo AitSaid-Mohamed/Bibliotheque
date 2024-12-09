@@ -1,11 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+
 Route::get('/', function () {
-    return view('welcome');
+    return ['Laravel' => app()->version()];
 });
 
-
-Route::get('/test-api', function () {
-    return view('test_api');
-});
+require __DIR__.'/auth.php';
