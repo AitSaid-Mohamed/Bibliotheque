@@ -12,17 +12,16 @@ class CreateLivreGenreTable extends Migration
     public function up(): void
     {
         Schema::create('livre_genres', function (Blueprint $table) {
-            $table->id(); // Clé primaire auto-incrémentée
-            $table->date('dateAquit'); // Date d'acquisition
-            $table->integer('rangGenre'); // Rang du genre
-            $table->unsignedBigInteger('idLivre'); // Clé étrangère vers Livre
-            $table->unsignedBigInteger('idGenre'); // Clé étrangère vers Genre
+            $table->id(); 
+            $table->date('dateAquit');
+            $table->integer('rangGenre');
+            $table->unsignedBigInteger('idLivre'); 
+            $table->unsignedBigInteger('idGenre'); 
 
-            // Contraintes de clé étrangère
             $table->foreign('idLivre')->references('idLivre')->on('livres')->onDelete('cascade');
             $table->foreign('idGenre')->references('idGenre')->on('genres')->onDelete('cascade');
 
-            $table->timestamps(); // created_at et updated_at
+            $table->timestamps(); 
         });
     }
 
