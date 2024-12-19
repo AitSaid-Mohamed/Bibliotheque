@@ -15,7 +15,11 @@ return new class extends Migration
             $table->id('idLivre');
             $table->string('titre');
             $table->string('auteur');
-            $table->float('evaluation')->default(0); 
+            $table->float('evaluation')->default(0);
+
+            // Clé étrangère vers la table utilisateurs
+            $table->foreignId('idUtilisateur')->constrained('users', 'id')->onDelete('cascade');
+
             $table->timestamps();
         });
     }

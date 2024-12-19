@@ -58,5 +58,9 @@ class User extends Authenticatable
     {
         return $this->hasOne(Admin::class, 'idUtilisateur');
     }
+    public function livres()
+    {
+        return $this->hasMany(Livre::class, 'idUtilisateur');
+    }
 
 }

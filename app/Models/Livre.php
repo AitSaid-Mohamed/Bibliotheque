@@ -13,6 +13,7 @@ class Livre extends Model
         'auteur',
        
         'evaluation',
+        'idUtilisateur'
     ];
 
     public $timestamps = true;
@@ -24,4 +25,9 @@ class Livre extends Model
     {
         return $this->belongsToMany(Genre::class, 'livre_genre', 'idLivre', 'idGenre');
     }
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'idUtilisateur');
+    }
+  
 }
