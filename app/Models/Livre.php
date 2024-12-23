@@ -11,9 +11,10 @@ class Livre extends Model
     protected $fillable = [
         'titre',
         'auteur',
-       
         'evaluation',
-        'idUtilisateur'
+        'idUtilisateur',
+        'photo', // Ajoutez le champ photo
+        'fichier_pdf', // Ajoutez le champ fichier_pdf
     ];
 
     public $timestamps = true;
@@ -25,9 +26,9 @@ class Livre extends Model
     {
         return $this->belongsToMany(Genre::class, 'livre_genre', 'idLivre', 'idGenre');
     }
+
     public function user()
     {
         return $this->belongsTo(User::class, 'idUtilisateur');
     }
-  
 }

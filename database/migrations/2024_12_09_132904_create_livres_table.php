@@ -16,6 +16,11 @@ return new class extends Migration
             $table->string('titre');
             $table->string('auteur');
             $table->float('evaluation')->default(0);
+                // Champ pour stocker le chemin de l'image
+                $table->string('photo')->nullable(); 
+
+                // Champ pour stocker le chemin du fichier PDF
+                $table->string('fichier_pdf')->nullable(); 
 
             // Clé étrangère vers la table utilisateurs
             $table->foreignId('idUtilisateur')->constrained('users', 'id')->onDelete('cascade');

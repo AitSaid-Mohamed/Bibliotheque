@@ -13,5 +13,12 @@ class GenresTableSeeder extends Seeder
         Genre::create(['nomGenre' => 'Fantasy']);
         Genre::create(['nomGenre' => 'Biography']);
         Genre::create(['nomGenre' => 'Thriller']);
+        Genre::create(['nomGenre' => 'Mystery']);
+        Genre::create(['nomGenre' => 'Romance']);
+        Genre::create(['nomGenre' => 'Sci-Fi']);
+        Genre::create(['nomGenre' => 'Non-fiction']);
+
+    
+       
     }
 }
